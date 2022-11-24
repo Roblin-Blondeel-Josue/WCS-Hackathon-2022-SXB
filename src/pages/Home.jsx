@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
-import CityPicture from "../components/CityPicture";
+import CityHeader from "../components/CityHeader";
 import GenerateButton from "../components/GenerateButton";
 import list from "../data/citiesList.json";
 
 function Home() {
-    const [city, setCity] = useState({});
+    const [city, setCity] = useState({ name: "paris" });
 
     return (
         <Box>
@@ -15,6 +15,7 @@ function Home() {
                     {city.name} - {city.country}
                 </Typography>
             )}
+            <CityHeader city={city.name} />
         </Box>
     );
 }
