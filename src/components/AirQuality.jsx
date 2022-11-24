@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
+import AirQualityWidget from "./AirQuality/AirQualityWidget";
 
 export default function AirQuality({ city }) {
+  const [aqi, setAqi] = useState("");
+
+  const endPoint = "https://api.waqi.info/feed";
   const token = "ec08e40ed8653e9069b989b3a6e4bb240d2fbafd";
 
   useEffect(() => {
-    fetch(`https://api.waqi.info/feed/${city}/?token=${token}`)
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => {
-        console.error(error);
-      });
+    if (city) {
+      fetch(`${endPoint}/${city}/?token=${token}`)
+        .then((response) => response.json())
+        .then((data) => setAqi(data.data.aqi))
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }, [city]);
 
   return (
@@ -20,8 +26,9 @@ export default function AirQuality({ city }) {
         justifyContent: "center",
       }}
     >
+      <AirQualityWidget />
       <Typography variant="body2">
-        {city}
+        {city}: {aqi}
         <a
           href="https://waqi.info/"
           style={{ textDecoration: "none", color: "#000" }}
