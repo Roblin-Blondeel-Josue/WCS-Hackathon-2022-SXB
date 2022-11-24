@@ -12,7 +12,7 @@ function Home() {
 
     return (
         <Box>
-            <Collapse in={checked} collapsedSize="15vh">
+            <Collapse in={checked} collapsedSize="15vh" timeout={1500}>
                 <Stack
                     alignItems="center"
                     justifyContent="center"
@@ -52,7 +52,7 @@ function Home() {
                 </Stack>
             </Collapse>
 
-            {city && <CityHeader city={city.name} />}
+            {city && <CityHeader city={city} />}
         </Box>
     );
 }
