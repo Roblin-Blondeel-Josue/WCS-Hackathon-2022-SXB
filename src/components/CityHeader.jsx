@@ -12,11 +12,9 @@ function CityHeader({ city }) {
     // useEffect(() => {
     //     axios
     //         .get(
-    //             `https://api.unsplash.com//search/photos?query=${city}+building+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
+    //             `https://api.unsplash.com//search/photos?query=${city.country}+${city.country}+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
     //         )
     //         .then((res) => {
-    //             console.log(res.data);
-    //             console.log(res.data.results[0].urls.regular);
     //             setImg(res.data.results[0].urls.regular);
     //         });
     // }, [city]);
@@ -31,11 +29,11 @@ function CityHeader({ city }) {
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 minWidth: "100vw",
-                minHeight: "100vh",
+                height: "85vh",
             }}
         >
             <Typography variant="h1" color="white" sx={{ fontWeight: "bold" }}>
-                {city}
+                {city.name}
             </Typography>
             {/* <img src={img} alt={city} />; */}
         </Box>
