@@ -1,11 +1,10 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-function GenerateButton({ list, setCity }) {
-
+function GenerateButton({ list, setCity, setChecked }) {
     const getRandomCity = (arr) => {
         const index = Math.floor(Math.random() * arr.length);
-        console.log(index);
+        setChecked(false);
         setCity(list[index]);
     };
 
