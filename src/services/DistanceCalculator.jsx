@@ -8,8 +8,8 @@ export default function GetDistance(start, end) {
       .post(
         "https://airportgap.dev-tester.com/api/airports/distance",
         new URLSearchParams({
-          from: start,
-          to: end,
+          from: `${start}`,
+          to: `${end}`,
         })
       )
       .then((response) =>
