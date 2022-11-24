@@ -23,6 +23,17 @@ function CityHeader({ city }) {
   //             setImg(res.data.results[0].urls.regular);
   //         });
   // }, [city]);
+  const getBg = () => {
+    if (aqi >= 100 && aqi < 200) {
+      return "#ef5350";
+    } else if (aqi >= 200 && aqi < 300) {
+      return "#ba68c8";
+    } else if (aqi >= 200 && aqi < 300) {
+      return "#c62828";
+    } else {
+      return "#000";
+    }
+  };
 
   return (
     <Box
@@ -35,18 +46,30 @@ function CityHeader({ city }) {
         backgroundSize: "cover",
         minWidth: "100vw",
         minHeight: "100vh",
-        opacity: "30%",
-        backgroundColor: getBg(aqi),
       }}
     >
-      <Typography variant="h1" color="white" sx={{ fontWeight: "bold" }}>
-        {city}
-      </Typography>
-      <Box margin="5rem">
-        <AirQuality city={city} aqi={aqi} setAqi={setAqi} />
-      </Box>
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          opacity: "50%",
+          backgroundColor: `${getBg(aqi)}`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          minWidth: "100vw",
+          minHeight: "100vh",
+        }}
+      >
+        <Typography variant="h1" color="white" sx={{ fontWeight: "bold" }}>
+          {city}
+        </Typography>
+        <Box margin="5rem">
+          <AirQuality city={city} aqi={aqi} setAqi={setAqi} />
+        </Box>
 
-      {/* <img src={img} alt={city} />; */}
+        {/* <img src={img} alt={city} />; */}
+      </Box>
     </Box>
   );
 }

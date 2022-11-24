@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 
 export default function AirQuality({ city, aqi, setAqi }) {
   const endPoint = "https://api.waqi.info/feed";
@@ -17,12 +17,7 @@ export default function AirQuality({ city, aqi, setAqi }) {
   }, [city]);
 
   return (
-    <Box
-      style={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+    <Stack alignItems="center">
       <Typography
         variant="title"
         color="white.main"
@@ -30,6 +25,13 @@ export default function AirQuality({ city, aqi, setAqi }) {
       >
         {aqi}
       </Typography>
-    </Box>
+      <Typography
+        variant="title"
+        color="white.main"
+        fontSize={{ xs: "0.5rem", sm: "1rem" }}
+      >
+        Indice de qualité de l'air
+      </Typography>
+    </Stack>
   );
 }
