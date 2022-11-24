@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React, { useState } from "react";
+import CityPicture from "../components/CityPicture";
 import GenerateButton from "../components/GenerateButton";
 import list from "../data/citiesList.json";
 
