@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import AirQuality from './components/AirQuality';
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
-  const [city, setCity] = useState("");
-  useEffect(()=>{
-    setCity("Strasbourg ")
-  },[])
-  return (
-    <div>
-      <AirQuality city={city} />
-    </div>
-  );
+    return <Home />;
 }
 
 export default App;
