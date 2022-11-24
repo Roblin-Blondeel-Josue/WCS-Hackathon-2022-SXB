@@ -5,5 +5,25 @@
     { "name": "delhi", "country": "india" },
     { "name": "jaunpur", "country": "india" },
     { "name": "faisalabad", "country": "pakistan" },
-    { "name": "noida", "country": "india" }
+    { "name": "noida", "country": "india" },
+    { "name": "bahawalpur", "country": "pakistan" },
+    { "name": "peshawar", "country": "pakistan" },
+    { "name": "bagpat", "country": "india" },
+    { "name": "hisar", "country": "india" },
+    { "name": "faridabad", "country": "india" },
+    { "name": "kashgar", "country": "china" },
+    { "name": "kanpur", "country": "india" },
+    { "name": "dhaka", "country": "bangladesh" },
+    { "name": "n'djamena", "country": "chad" },
+    { "name": "mexico", "country": "mexico" },
+    { "name": "sreepur", "country": "bangladesh" },
+    { "name": "burabay", "country": "kazakhstan" },
+    { "name": "igdir", "country": "india" },
+    { "name": "osh", "country": "kyrgyzstan" },
+    { "name": "baghdad", "country": "iraq" },
+    { "name": "puyang", "country": "china" },
+    { "name": "aksu", "country": "china" },
+    { "name": "turpan", "country": "china" },
+    { "name": "angol", "country": "chile" }
+
 ]
