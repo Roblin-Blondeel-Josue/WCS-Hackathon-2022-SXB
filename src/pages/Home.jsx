@@ -1,37 +1,19 @@
 import React, { useState } from "react";
-import { Box, Typography, ThemeProvider } from "@mui/material";
+import { Box, Collapse, Typography } from "@mui/material";
 import ScubaDivingIcon from "@mui/icons-material/ScubaDiving";
-import { createTheme } from "@mui/material/styles";
 import CityHeader from "../components/CityHeader";
 import GenerateButton from "../components/GenerateButton";
 import list from "../data/citiesList.json";
 import { Stack } from "@mui/system";
 
-const theme = createTheme({
-    typography: {
-        title: { fontFamily: "Righteous, cursive" },
-    },
-    palette: {
-        white: {
-            main: "#FFFFFF",
-        },
-    },
-});
-
-const responsiveTitle = {
-    direction: "row",
-    alignItems: "center",
-    gap: "1rem",
-};
-
 function Home() {
     const [city, setCity] = useState();
+    const [checked, setChecked] = useState(true);
 
     return (
-        <ThemeProvider theme={theme}>
-            <Box>
-                <Box
-                    display="flex"
+        <Box>
+            <Collapse in={checked} collapsedSize="15vh" timeout={1500}>
+                <Stack
                     alignItems="center"
                     justifyContent="center"
                     sx={{
@@ -40,7 +22,7 @@ function Home() {
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                         minWidth: "100vw",
-                        minHeight: "100vh",
+                        height: "100vh",
                     }}
                 >
                     <Stack
@@ -51,7 +33,6 @@ function Home() {
                             position: "absolute",
                             top: "1rem",
                             left: { xs: "unset", sm: "1rem" },
-                            // margin: { xs: "auto", sm: "0 0 0 10px" },
                         }}
                     >
                         <Typography
@@ -63,11 +44,16 @@ function Home() {
                         </Typography>
                         <ScubaDivingIcon fontSize="large" color="white" />
                     </Stack>
-                    <GenerateButton list={list} setCity={setCity} />
-                </Box>
-                {city && <CityHeader city={city.name} />}
-            </Box>
-        </ThemeProvider>
+                    <GenerateButton
+                        list={list}
+                        setCity={setCity}
+                        setChecked={setChecked}
+                    />
+                </Stack>
+            </Collapse>
+
+            {city && <CityHeader city={city} />}
+        </Box>
     );
 }
 
