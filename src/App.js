@@ -1,9 +1,10 @@
 import './App.css';
+import AirQuality from './components/AirQuality';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
+    <div>
+      <AirQuality city={city}/>
     </div>
   );
 }
