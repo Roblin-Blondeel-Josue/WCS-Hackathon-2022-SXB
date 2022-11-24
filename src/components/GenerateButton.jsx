@@ -3,7 +3,8 @@ import React from "react";
 
 function GenerateButton({ list, setCity }) {
     const getRandomCity = (arr) => {
-        const index = Math.floor(Math.random() * (arr.length - 1) + 1);
+        const index = Math.floor(Math.random() * arr.length);
+        console.log(index);
         setCity(list[index]);
     };
 
