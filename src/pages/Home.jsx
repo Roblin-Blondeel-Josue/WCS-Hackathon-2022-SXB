@@ -5,6 +5,7 @@ import CityHeader from "../components/CityHeader";
 import GenerateButton from "../components/GenerateButton";
 import list from "../data/citiesList.json";
 import { Stack } from "@mui/system";
+import CityDetails from "../components/CityDetails";
 
 function Home() {
     const [city, setCity] = useState();
@@ -52,7 +53,7 @@ function Home() {
                 </Stack>
             </Collapse>
 
-            {city && <CityHeader city={city} />}
+            {city && <CityDetails city={city} />}
         </Box>
     );
 }
