@@ -8,7 +8,16 @@ function GenerateButton({ list, setCity }) {
         setCity(list[index]);
     };
 
-    return <Button onClick={() => getRandomCity(list)}>Visitez un pays</Button>;
+    return (
+        <Button
+            variant="contained"
+            size="large"
+            sx={{ padding: "1rem" }}
+            onClick={() => getRandomCity(list)}
+        >
+            Generez une destination
+        </Button>
+    );
 }
 
 export default GenerateButton;
