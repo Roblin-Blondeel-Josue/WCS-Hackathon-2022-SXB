@@ -3,15 +3,16 @@ import axios from "axios";
 import { Box, Typography } from "@mui/material";
 
 function CityHeader({ city }) {
-    const [img, setImg] = useState();
-    // "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODMzMTh8MHwxfHNlYXJjaHwxfHxwYXJpc3xlbnwwfHx8fDE2NjkyOTUwODE&ixlib=rb-4.0.3&q=80"
+    const [img, setImg] = useState(
+        "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODMzMTh8MHwxfHNlYXJjaHwxfHxwYXJpc3xlbnwwfHx8fDE2NjkyOTUwODE&ixlib=rb-4.0.3&q=80"
+    );
 
     // const apiKey = "Y0ARhn_ULsZYMBKuqKRgGRen0RPKFSmo6Hq4T-mpTVE";
 
     // useEffect(() => {
     //     axios
     //         .get(
-    //             `https://api.unsplash.com//search/photos?query=${city}+buildings&orientation=landscape&per_page=1&client_id=${apiKey}`
+    //             `https://api.unsplash.com//search/photos?query=${city.country}+${city.country}+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
     //         )
     //         .then((res) => {
     //             setImg(res.data.results[0].urls.regular);
@@ -32,7 +33,7 @@ function CityHeader({ city }) {
             }}
         >
             <Typography variant="h1" color="white" sx={{ fontWeight: "bold" }}>
-                {city}
+                {city.name}
             </Typography>
             {/* <img src={img} alt={city} />; */}
         </Box>
