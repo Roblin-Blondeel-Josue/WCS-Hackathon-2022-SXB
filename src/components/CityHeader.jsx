@@ -8,17 +8,17 @@ function CityHeader({ city, setCity, list, setChecked }) {
         "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzODMzMTh8MHwxfHNlYXJjaHwxfHxwYXJpc3xlbnwwfHx8fDE2NjkyOTUwODE&ixlib=rb-4.0.3&q=80"
     );
 
-    // const apiKey = "Y0ARhn_ULsZYMBKuqKRgGRen0RPKFSmo6Hq4T-mpTVE";
+    const apiKey = "Y0ARhn_ULsZYMBKuqKRgGRen0RPKFSmo6Hq4T-mpTVE";
 
-    // useEffect(() => {
-    //     axios
-    //         .get(
-    //             `https://api.unsplash.com//search/photos?query=${city.country}+${city.country}+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
-    //         )
-    //         .then((res) => {
-    //             setImg(res.data.results[0].urls.regular);
-    //         });
-    // }, [city]);
+    useEffect(() => {
+        axios
+            .get(
+                `https://api.unsplash.com//search/photos?query=${city.country}+${city.country}+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
+            )
+            .then((res) => {
+                setImg(res.data.results[0].urls.regular);
+            });
+    }, [city]);
 
     return (
         <Box
