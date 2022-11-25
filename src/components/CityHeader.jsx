@@ -16,7 +16,8 @@ function CityHeader({ city, setCity, list, setChecked }) {
     //             `https://api.unsplash.com//search/photos?query=${city.country}+${city.country}+architecture&orientation=landscape&per_page=1&client_id=${apiKey}`
     //         )
     //         .then((res) => {
-    //             setImg(res.data.results[0].urls.regular);
+    //             setImg(res.data.results[0].urls.regular)
+    //          .catch((err) => console.warn(err));
     //         });
     // }, [city]);
 
