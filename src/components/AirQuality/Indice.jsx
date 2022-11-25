@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 export default function Indice({ aqi }) {
   const n = parseInt(aqi);
@@ -17,11 +18,11 @@ export default function Indice({ aqi }) {
     } else if (aqi >= 50 && aqi < 100) {
       return "#fff59d";
     } else if (aqi >= 100 && aqi < 150) {
-      return "#ffd54f";
+      return "#ffab91";
     } else if (aqi >= 150 && aqi < 200) {
-      return "#ef5350";
+      return "#e57373";
     } else if (aqi >= 200 && aqi < 300) {
-      return "#ba68c8";
+      return "#ce93d8";
     } else if (aqi >= 200 && aqi < 300) {
       return "#880e4f";
     } else {
@@ -34,14 +35,14 @@ export default function Indice({ aqi }) {
       <Typography
         variant="title"
         sx={{ color: `${getBg(aqi)}` }}
-        fontSize={{ xs: "3rem", sm: "5rem" }}
+        fontSize={{ xs: "7rem", sm: "5rem" }}
       >
         {n && <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>}
       </Typography>
       <Typography
         variant="title"
         color="#000"
-        fontSize={{ xs: "0.5rem", sm: "1rem" }}
+        fontSize={{ xs: "1.4rem", sm: "1rem" }}
       >
         Indice de qualité de l'air
       </Typography>

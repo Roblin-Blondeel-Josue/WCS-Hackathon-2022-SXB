@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack, Typography } from "@mui/material";
 import { useSpring, animated } from "react-spring";
+import { useInView } from "react-intersection-observer";
 
 export default function Particules({ pm25 }) {
   const n = parseInt(pm25);
@@ -16,14 +17,14 @@ export default function Particules({ pm25 }) {
       <Typography
         variant="title"
         color="#000"
-        fontSize={{ xs: "3rem", sm: "5rem" }}
+        fontSize={{ xs: "7rem", sm: "5rem" }}
       >
         {n && <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>}
       </Typography>
       <Typography
         variant="title"
         color="#000"
-        fontSize={{ xs: "0.5rem", sm: "1rem" }}
+        fontSize={{ xs: "1.4rem", sm: "1rem" }}
       >
         Particules Fines
       </Typography>
