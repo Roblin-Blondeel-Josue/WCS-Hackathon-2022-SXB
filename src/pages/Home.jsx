@@ -52,7 +52,14 @@ function Home() {
         </Stack>
       </Collapse>
 
-      {city && <CityDetails city={city} />}
+      {city && (
+        <CityDetails
+          city={city}
+          list={list}
+          setCity={setCity}
+          setChecked={setChecked}
+        />
+      )}
     </Box>
   );
 }
