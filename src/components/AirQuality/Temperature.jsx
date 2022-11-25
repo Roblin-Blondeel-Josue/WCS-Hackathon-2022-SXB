@@ -10,7 +10,6 @@ export default function Temperature({ iaqi }) {
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
-  console.log(n);
   return (
     <Stack alignItems="center">
       <Typography
