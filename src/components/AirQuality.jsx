@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Box, Typography } from "@mui/material";
-import AirQualityWidget from "./AirQuality/AirQualityWidget";
+import axios from "axios";
+import { Box } from "@mui/material";
+import Number from "./AirQuality/Number";
 
 export default function AirQuality({ city }) {
   const [aqi, setAqi] = useState("");
@@ -10,14 +11,14 @@ export default function AirQuality({ city }) {
 
   useEffect(() => {
     if (city) {
-      fetch(`${endPoint}/${city}/?token=${token}`)
-        .then((response) => response.json())
-        .then((data) => setAqi(data.data.aqi))
-        .catch((error) => {
-          console.error(error);
-        });
+      axios
+        .get(`${endPoint}/${city}/?token=${token}`)
+        .then((res) => setAqi(res.data.data.aqi))
+        .catch((err) => console.error(err));
     }
   }, [city]);
+  console.log(aqi);
+  localStorage.setItem("num", JSON.stringify(aqi));
 
   return (
     <Box
@@ -26,16 +27,7 @@ export default function AirQuality({ city }) {
         justifyContent: "center",
       }}
     >
-      <AirQualityWidget />
-      <Typography variant="body2">
-        {city}: {aqi}
-        <a
-          href="https://waqi.info/"
-          style={{ textDecoration: "none", color: "#000" }}
-        >
-          World Air Quality Index
-        </a>
-      </Typography>
+      <Number />
     </Box>
   );
 }

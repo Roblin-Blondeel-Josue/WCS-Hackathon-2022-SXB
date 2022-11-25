@@ -5,6 +5,7 @@ import CityWikipediaInfos from "./CityWikipediaInfos";
 import { Box, Stack } from "@mui/material";
 
 function CityDetails({ city, setCity, list, setChecked }) {
+
     return (
         <>
             <CityHeader
