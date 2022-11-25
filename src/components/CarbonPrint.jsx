@@ -1,7 +1,6 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import GetDistance from "../services/DistanceCalculator";
-import GetIata from "../services/DistanceIATA";
+import MakeVoyage from "../services/MakeVoyage";
 import { Typography, Card } from "@mui/material";
 import ConnectingAirportsOutlinedIcon from "@mui/icons-material/ConnectingAirportsOutlined";
 import CloudIcon from "@mui/icons-material/Cloud";
@@ -15,12 +14,10 @@ function FlightToAnything(CpValue, coef) {
   const CpReturn = Math.round(CpValue / coef);
   return CpReturn;
 }
-export default function CarbonPrint({ ville }) {
-  const aeroport1 = GetIata("Strasbourg");
-  const aeroport2 = GetIata("Talas");
-  console.log(aeroport1, aeroport2);
-  const voyage = GetDistance(aeroport1, aeroport2);
-  const carbonPrintFlight = CarbonPrintCalcul(voyage);
+export default function CarbonPrint({ depart, airport, name }) {
+  const distanceParcourue = MakeVoyage(depart, airport);
+  console.log(distanceParcourue);
+  const carbonPrintFlight = CarbonPrintCalcul(distanceParcourue);
   const carbonPrintCar = FlightToAnything(carbonPrintFlight, 0.158);
   const carbonPrintCow = FlightToAnything(carbonPrintFlight, 1.14);
   const matches = useMediaQuery("(min-width:900px)");
@@ -63,7 +60,7 @@ export default function CarbonPrint({ ville }) {
         align="center"
         style={{ paddingTop: "0.5em", fontSize: "1em" }}
       >
-        De Strasbourg à {ville} : <br />
+        De {depart} à {name} : <br />
       </Typography>
       <Typography
         variant="body1"

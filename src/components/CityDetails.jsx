@@ -3,13 +3,18 @@ import CityHeader from "./CityHeader";
 import AirQuality from "./AirQuality";
 import CarbonPrint from "./CarbonPrint";
 
-function CityDetails({ city }) {
+function CityDetails({ city, setCity, list, setChecked }) {
   return (
-    <div>
-      <CityHeader city={city} />
+    <>
+      <CityHeader
+        city={city}
+        list={list}
+        setCity={setCity}
+        setChecked={setChecked}
+      />
       <AirQuality city={city.name} />
-      <CarbonPrint ville={city.name} />
-    </div>
+      <CarbonPrint depart="Strasbourg" airport={city.iata} name={city.name} />
+    </>
   );
 }
 

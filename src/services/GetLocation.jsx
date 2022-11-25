@@ -1,22 +1,26 @@
-const successCallbackLatitude = (position) => {
-  const latitude = position.coords.latitude;
-  console.log(latitude);
-};
-const successCallbackLongitude = (position) => {
-  const longitude = position.coords.longitude;
-  console.log(longitude);
-};
+import React from "react";
 
-const errorCallback = (error) => {
-  console.log(error);
-};
-export default function GetLocalisation() {
-  navigator.geolocation.getCurrentPosition(
-    successCallbackLatitude,
-    errorCallback
-  );
-  navigator.geolocation.getCurrentPosition(
-    successCallbackLongitude,
-    errorCallback
-  );
+function Getlatitude() {
+  const [latitude, setLatitude] = React.useState();
+  React.useEffect(() => {
+    const successCallback = (position) => {
+      setLatitude(position.coords.latitude);
+    };
+    navigator.geolocation.getCurrentPosition(successCallback);
+  }, []);
+  return latitude;
 }
+function Getlongitude() {
+  const [longitude, setLongitude] = React.useState();
+  React.useEffect(() => {
+    const successCallback = (position) => {
+      setLongitude(position.coords.longitude);
+    };
+    navigator.geolocation.getCurrentPosition(successCallback);
+  }, []);
+  return longitude;
+}
+const lat = Getlatitude();
+const long = Getlongitude();
+const position = { lat, long };
+export default position;
