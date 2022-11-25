@@ -1,0 +1,19 @@
+[
+    { "name": "patna", "country": "india", "iata":"PAT" },
+    { "name": "dinapore", "country": "india", "iata":"PAT" },
+    { "name": "bettiah", "country": "india" , "iata":"PAT"},
+    { "name": "faridabad", "country": "india", "iata": "DEL" },
+    { "name": "saharsa", "country": "india", "iata": "DEL" },
+    { "name": "talas", "country": "kyrgyzstan", "iata": "OSS" },
+    { "name": "bishkek", "country": "kyrgyzstan", "iata": "FRU" },
+    { "name": "beijing", "country": "china", "iata": "PEK"},
+    { "name": "linfen", "country": "china", "iata": "LFQ" },
+    { "name": "tongzhou", "country": "china", "iata": "PEK"},
+    { "name": "baghdad", "country": "iraq", "iata": "BGW" },
+    { "name": "zacatecas", "country": "mexico", "iata": "ZCL" },
+    { "name": "qarchak", "country": "iran", "iata": "IKA" },
+    { "name": "paltan", "country": "bangladesh", "iata": "DAC" },
+    { "name": "igdir", "country": "turkey", "iata": "IGD"},
+    { "name": "nairobi", "country": "kenya", "iata": "NBO" },
+    { "name": "peshawar", "country": "pakistan", "iata": "PEW" }
+]
