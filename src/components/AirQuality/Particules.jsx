@@ -2,15 +2,15 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import { useSpring, animated } from "react-spring";
 
-export default function Number() {
-  const n = parseInt(localStorage.getItem("num"));
+export default function Particules({ pm25 }) {
+  const n = parseInt(pm25);
   const { number } = useSpring({
     from: { number: 0 },
     number: n,
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
-  console.log(n);
+
   return (
     <Stack alignItems="center">
       <Typography
@@ -25,7 +25,7 @@ export default function Number() {
         color="#000"
         fontSize={{ xs: "0.5rem", sm: "1rem" }}
       >
-        Indice de qualité de l'air
+        Particules Fines
       </Typography>
     </Stack>
   );
