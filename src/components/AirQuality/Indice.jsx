@@ -10,7 +10,7 @@ export default function Indice({ aqi }) {
     delay: 200,
     config: { mass: 1, tension: 20, friction: 10 },
   });
-  console.log(n);
+
   const getBg = () => {
     if (aqi >= 0 && aqi < 50) {
       return "#aed581";
