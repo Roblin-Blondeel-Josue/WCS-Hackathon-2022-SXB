@@ -33,8 +33,9 @@ export default function AirQuality({ city }) {
         display: "flex",
         justifyContent: "center",
       }}
+      sx={{ flexDirection: { xs: "column", sm: "row" } }}
     >
-      <Box style={{ marginLeft: "1rem" }}>
+      <Box>
         <Indice aqi={aqi} />
       </Box>
       <Box style={{ marginLeft: "1rem" }}>
