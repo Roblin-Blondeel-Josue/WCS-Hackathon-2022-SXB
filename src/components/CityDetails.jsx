@@ -3,6 +3,7 @@ import CityHeader from "./CityHeader";
 import AirQuality from "./AirQuality";
 import CityWikipediaInfos from "./CityWikipediaInfos";
 import { Box, Stack } from "@mui/material";
+import CarbonPrint from "./CarbonPrint";
 
 function CityDetails({ city, setCity, list, setChecked }) {
   return (
@@ -19,7 +20,9 @@ function CityDetails({ city, setCity, list, setChecked }) {
       >
         <AirQuality city={city.name} />
         <CityWikipediaInfos city={city} />
+        <CarbonPrint depart="Strasbourg" airport={city.iata} name={city.name} />
       </Stack>
+
     </>
   );
 }
