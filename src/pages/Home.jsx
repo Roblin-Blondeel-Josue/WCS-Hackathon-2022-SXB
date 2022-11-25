@@ -51,7 +51,6 @@ function Home() {
           />
         </Stack>
       </Collapse>
-
       {city && (
         <CityDetails
           city={city}
@@ -62,6 +61,7 @@ function Home() {
       )}
     </Box>
   );
+
 }
 
 export default Home;
